@@ -1,0 +1,32 @@
+<div>
+  <h1>Profile</h1>
+  <h2>Olá, {{firstName}} {{lastName}}</h2>
+  {{#if city}}
+    <h3>Você mora em {{city}}</h3>
+  {{else}}
+    <h3>É um cidadão do mundo!</h3>
+  {{/if}}
+  <p>Bem vindo ao {{bootcamp}}</p>
+  {{#unless favoriteFruit}}
+    <p>Você gosta de goiaba!</p>
+  {{/unless}}
+  <ul>
+    {{#each petsShort}}
+      <li>{{@index}}: {{this}}</li>
+    {{/each}}
+  </ul>
+  <h3>Projects</h3>
+  {{#each projects}}
+    <p>{{@key}}: {{this}}</p>
+  {{/each}}
+  {{projects.module1}}
+  {{#with projects}}
+    <p>{{module1}}</p>
+    <p>{{module2}}</p>
+  {{/with}}
+  {{#each pets}}
+    {{#with this}}
+      {{name}} is a {{type}}
+    {{/with}}
+  {{/each}}
+</div>
